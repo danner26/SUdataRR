@@ -13,9 +13,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "icon_32x32@2x-1.png",
+      "size" : "32x32",
       "scale" : "1x"
     },
     {
