@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D326394F1D61124900ABE304 /* SUdataRR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SUdataRR.entitlements; sourceTree = "<group>"; };
 		D36D34AE1D5D076C0026A8D7 /* SUdataRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUdataRR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36D34B11D5D076C0026A8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D36D34B31D5D076C0026A8D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		D36D34B01D5D076C0026A8D7 /* SUdataRR */ = {
 			isa = PBXGroup;
 			children = (
+				D326394F1D61124900ABE304 /* SUdataRR.entitlements */,
 				D36D34B11D5D076C0026A8D7 /* AppDelegate.swift */,
 				D36D34B31D5D076C0026A8D7 /* ViewController.swift */,
 				D36D34B51D5D076C0026A8D7 /* Assets.xcassets */,
@@ -190,13 +192,23 @@
 				TargetAttributes = {
 					D36D34AD1D5D076C0026A8D7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8V4CQRZZ26;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
+						};
 					};
 					D36D34BE1D5D076C0026A8D7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = D36D34AD1D5D076C0026A8D7;
 					};
 					D36D34C91D5D076C0026A8D7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = D36D34AD1D5D076C0026A8D7;
 					};
 				};
@@ -386,11 +398,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8V4CQRZZ26;
 				INFOPLIST_FILE = SUdataRR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stockton.itservices.SUdataRR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -398,11 +414,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8V4CQRZZ26;
 				INFOPLIST_FILE = SUdataRR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stockton.itservices.SUdataRR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -415,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stockton.itservices.SUdataRRTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SUdataRR.app/Contents/MacOS/SUdataRR";
 			};
 			name = Debug;
@@ -428,6 +449,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stockton.itservices.SUdataRRTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SUdataRR.app/Contents/MacOS/SUdataRR";
 			};
 			name = Release;
@@ -440,6 +462,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stockton.itservices.SUdataRRUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SUdataRR;
 			};
 			name = Debug;
@@ -452,6 +475,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stockton.itservices.SUdataRRUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SUdataRR;
 			};
 			name = Release;
@@ -475,6 +499,7 @@
 				D36D34D51D5D076C0026A8D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D36D34D61D5D076C0026A8D7 /* Build configuration list for PBXNativeTarget "SUdataRRTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +508,7 @@
 				D36D34D81D5D076C0026A8D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D36D34D91D5D076C0026A8D7 /* Build configuration list for PBXNativeTarget "SUdataRRUITests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +517,7 @@
 				D36D34DB1D5D076C0026A8D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
