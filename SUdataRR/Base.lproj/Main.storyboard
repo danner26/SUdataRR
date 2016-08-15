@@ -403,6 +403,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="osVersion" destination="jxi-kD-DkT" id="l53-Ne-udk"/>
                         <outlet property="populateHostname" destination="8pR-El-JNr" id="UWB-8y-9wt"/>
                         <outlet property="populateIPAddr" destination="hwg-BY-wYY" id="34E-Nm-fbT"/>
                         <outlet property="populateIPAddr2" destination="jFT-T8-cT8" id="L5B-c6-UOx"/>

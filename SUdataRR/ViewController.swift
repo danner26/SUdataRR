@@ -7,12 +7,15 @@
 //
 
 import Cocoa
+import Foundation
 
 class ViewController: NSViewController {
 
     @IBOutlet weak var populateHostname: NSTextField!
     @IBOutlet weak var populateIPAddr: NSTextField!
     @IBOutlet weak var populateIPAddr2: NSTextField!
+    
+    @IBOutlet weak var osVersion: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,6 +34,13 @@ class ViewController: NSViewController {
         
         //mac address
         
+        //OS X Version
+        let osVers = ProcessInfo.processInfo.operatingSystemVersion
+        let osMajorVers = String(osVers.majorVersion)
+        let osMinorVers = String(osVers.minorVersion)
+        let osPatchVers = String(osVers.patchVersion)
+        osVersion.stringValue = (osMajorVers + "." + osMinorVers + "." + osPatchVers)
+        
     }
 
     override var representedObject: AnyObject? {
@@ -41,6 +51,7 @@ class ViewController: NSViewController {
 
 
 }
+//get IP Address of active adapters
 func getIFAddresses() -> [String] {
     var addresses = [String]()
     
