@@ -34,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		D326394F1D61124900ABE304 /* SUdataRR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SUdataRR.entitlements; sourceTree = "<group>"; };
+		D32639501D615F8A00ABE304 /* sudatarr-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "sudatarr-header.h"; path = "ObjectiveC/sudatarr-header.h"; sourceTree = "<group>"; };
+		D32639511D615FF100ABE304 /* IPChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IPChecker.h; path = ObjectiveC/IPChecker/IPChecker.h; sourceTree = "<group>"; };
+		D32639521D61603300ABE304 /* IPChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IPChecker.m; path = ObjectiveC/IPChecker/IPChecker.m; sourceTree = "<group>"; };
 		D36D34AE1D5D076C0026A8D7 /* SUdataRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUdataRR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36D34B11D5D076C0026A8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D36D34B31D5D076C0026A8D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +105,9 @@
 				D36D34B51D5D076C0026A8D7 /* Assets.xcassets */,
 				D36D34B71D5D076C0026A8D7 /* Main.storyboard */,
 				D36D34BA1D5D076C0026A8D7 /* Info.plist */,
+				D32639501D615F8A00ABE304 /* sudatarr-header.h */,
+				D32639511D615FF100ABE304 /* IPChecker.h */,
+				D32639521D61603300ABE304 /* IPChecker.m */,
 			);
 			path = SUdataRR;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stockton.itservices.SUdataRR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "SUdataRR/ObjectiveC/sudatarr-header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,6 +433,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stockton.itservices.SUdataRR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "SUdataRR/ObjectiveC/sudatarr-header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
