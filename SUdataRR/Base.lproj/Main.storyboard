@@ -346,7 +346,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jFT-T8-cT8">
                                 <rect key="frame" x="199" y="100" width="97" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="127.000.000.001" id="BxR-CZ-MaN">
-                                    <font key="font" metaFont="system" size="12"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -354,7 +354,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X4z-vC-bNt">
                                 <rect key="frame" x="182" y="60" width="113" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="AB:CD:EF:01:23:45" id="dVe-JI-evG">
-                                    <font key="font" metaFont="system" size="12"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -405,6 +405,7 @@
                     <connections>
                         <outlet property="populateHostname" destination="8pR-El-JNr" id="UWB-8y-9wt"/>
                         <outlet property="populateIPAddr" destination="hwg-BY-wYY" id="34E-Nm-fbT"/>
+                        <outlet property="populateIPAddr2" destination="jFT-T8-cT8" id="L5B-c6-UOx"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -16,7 +16,7 @@
 #include <arpa/inet.h>
 #include "IPChecker.h"
 
-@implementation IPChecker
+@implementation IPChecker : NSObject
 
 + (NSString *)getIP
 {
@@ -41,3 +41,5 @@
     
     return address;
 }
+@end
+

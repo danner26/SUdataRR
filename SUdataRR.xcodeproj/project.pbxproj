@@ -34,9 +34,6 @@
 
 /* Begin PBXFileReference section */
 		D326394F1D61124900ABE304 /* SUdataRR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SUdataRR.entitlements; sourceTree = "<group>"; };
-		D32639501D615F8A00ABE304 /* sudatarr-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "sudatarr-header.h"; path = "ObjectiveC/sudatarr-header.h"; sourceTree = "<group>"; };
-		D32639511D615FF100ABE304 /* IPChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IPChecker.h; path = ObjectiveC/IPChecker/IPChecker.h; sourceTree = "<group>"; };
-		D32639521D61603300ABE304 /* IPChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IPChecker.m; path = ObjectiveC/IPChecker/IPChecker.m; sourceTree = "<group>"; };
 		D36D34AE1D5D076C0026A8D7 /* SUdataRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUdataRR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36D34B11D5D076C0026A8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D36D34B31D5D076C0026A8D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +46,7 @@
 		D36D34CA1D5D076C0026A8D7 /* SUdataRRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUdataRRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36D34CE1D5D076C0026A8D7 /* SUdataRRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUdataRRUITests.swift; sourceTree = "<group>"; };
 		D36D34D01D5D076C0026A8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D370290B1D621D40002EEC63 /* SUdataRR-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUdataRR-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,15 +97,13 @@
 		D36D34B01D5D076C0026A8D7 /* SUdataRR */ = {
 			isa = PBXGroup;
 			children = (
+				D370290B1D621D40002EEC63 /* SUdataRR-Bridging-Header.h */,
 				D326394F1D61124900ABE304 /* SUdataRR.entitlements */,
 				D36D34B11D5D076C0026A8D7 /* AppDelegate.swift */,
 				D36D34B31D5D076C0026A8D7 /* ViewController.swift */,
 				D36D34B51D5D076C0026A8D7 /* Assets.xcassets */,
 				D36D34B71D5D076C0026A8D7 /* Main.storyboard */,
 				D36D34BA1D5D076C0026A8D7 /* Info.plist */,
-				D32639501D615F8A00ABE304 /* sudatarr-header.h */,
-				D32639511D615FF100ABE304 /* IPChecker.h */,
-				D32639521D61603300ABE304 /* IPChecker.m */,
 			);
 			path = SUdataRR;
 			sourceTree = "<group>";
@@ -408,15 +404,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8V4CQRZZ26;
 				INFOPLIST_FILE = SUdataRR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stockton.itservices.SUdataRR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "SUdataRR/ObjectiveC/sudatarr-header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SUdataRR/SUdataRR-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "SUdataRR/SUdataRR-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -425,15 +426,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8V4CQRZZ26;
 				INFOPLIST_FILE = SUdataRR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stockton.itservices.SUdataRR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "SUdataRR/ObjectiveC/sudatarr-header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SUdataRR/SUdataRR-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "SUdataRR/SUdataRR-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
