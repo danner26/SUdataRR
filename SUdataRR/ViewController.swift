@@ -38,8 +38,10 @@ class ViewController: NSViewController {
         let finalMACAddress = getInterfaces()
         if (finalMACAddress.count != 0) {
             populateMACAddress.stringValue = finalMACAddress[0].mac
-            if (finalMACAddress.count != 1 && finalMACAddress[0].mac != finalMACAddress[1].mac) {
-                populateMACAddress2.stringValue = finalMACAddress[1].mac
+            if (finalMACAddress.count != 2) {
+                if (finalMACAddress[0].mac != finalMACAddress[2].mac) {
+                populateMACAddress2.stringValue = finalMACAddress[2].mac
+                }
             }
         }
         
