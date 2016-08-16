@@ -227,14 +227,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eUE-hP-c9P">
-                                <rect key="frame" x="18" y="7" width="87" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="OS Updates?" id="MwH-cA-gOH">
-                                    <font key="font" metaFont="systemSemibold" size="13"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8pR-El-JNr">
                                 <rect key="frame" x="136" y="145" width="124" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="hostname-macintosh" id="c1U-kN-Xf2">
@@ -244,7 +236,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hwg-BY-wYY">
-                                <rect key="frame" x="199" y="117" width="97" height="16"/>
+                                <rect key="frame" x="136" y="117" width="97" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="127.000.000.001" id="4wp-Bk-tN7">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -252,7 +244,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ilI-A4-1Tg">
-                                <rect key="frame" x="182" y="75" width="115" height="16"/>
+                                <rect key="frame" x="137" y="75" width="115" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="AB:CD:ED:01:23:45" id="xCx-4B-RHv">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -262,14 +254,6 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jxi-kD-DkT">
                                 <rect key="frame" x="136" y="35" width="91" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="macOS Version" id="3vg-wa-xZa">
-                                    <font key="font" metaFont="cellTitle"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2xj-Hq-z7q">
-                                <rect key="frame" x="136" y="7" width="142" height="16"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="Are/Are Not OS Updates" id="z5J-oW-w9x">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -344,7 +328,7 @@
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jFT-T8-cT8">
-                                <rect key="frame" x="199" y="100" width="97" height="16"/>
+                                <rect key="frame" x="136" y="100" width="97" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="127.000.000.001" id="BxR-CZ-MaN">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -352,7 +336,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X4z-vC-bNt">
-                                <rect key="frame" x="182" y="60" width="113" height="16"/>
+                                <rect key="frame" x="137" y="60" width="113" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="AB:CD:EF:01:23:45" id="dVe-JI-evG">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -369,8 +353,8 @@
                             <constraint firstItem="fqe-IK-ham" firstAttribute="top" secondItem="jWJ-OU-B7S" secondAttribute="bottom" constant="2" id="Bnf-up-47P"/>
                             <constraint firstAttribute="bottom" secondItem="Kst-Oq-Cih" secondAttribute="bottom" id="CDE-of-91s"/>
                             <constraint firstItem="f1F-37-7JQ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="105" id="Gku-LP-bqe"/>
-                            <constraint firstItem="jFT-T8-cT8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="201" id="GoZ-Ek-KaQ"/>
-                            <constraint firstItem="hwg-BY-wYY" firstAttribute="leading" secondItem="Fje-Xe-dHv" secondAttribute="trailing" constant="109" id="GzC-M3-DSM"/>
+                            <constraint firstItem="jFT-T8-cT8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="138" id="GoZ-Ek-KaQ"/>
+                            <constraint firstItem="hwg-BY-wYY" firstAttribute="leading" secondItem="Fje-Xe-dHv" secondAttribute="trailing" constant="46" id="GzC-M3-DSM"/>
                             <constraint firstItem="ORf-FY-exR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="HR2-Pz-LZj"/>
                             <constraint firstItem="W3Z-04-aOR" firstAttribute="top" secondItem="6eZ-H4-jiQ" secondAttribute="bottom" id="HZo-go-1Z9"/>
                             <constraint firstItem="Kst-Oq-Cih" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="90" id="JuR-K7-d6V"/>
@@ -384,22 +368,18 @@
                             <constraint firstItem="jxi-kD-DkT" firstAttribute="leading" secondItem="ORf-FY-exR" secondAttribute="trailing" constant="44" id="cLf-Lt-9mF"/>
                             <constraint firstItem="jWJ-OU-B7S" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="18" id="cZa-LG-S26"/>
                             <constraint firstItem="Kst-Oq-Cih" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="dCF-ye-zS2"/>
-                            <constraint firstItem="2xj-Hq-z7q" firstAttribute="top" secondItem="jxi-kD-DkT" secondAttribute="bottom" constant="12" id="eyn-7r-adj"/>
                             <constraint firstItem="ORf-FY-exR" firstAttribute="top" secondItem="dru-dd-wEs" secondAttribute="bottom" constant="24" id="fyb-vB-wmG"/>
                             <constraint firstItem="f1F-37-7JQ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="gSW-AO-ALG"/>
                             <constraint firstItem="jWJ-OU-B7S" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="kFb-xj-Urj"/>
-                            <constraint firstItem="2xj-Hq-z7q" firstAttribute="leading" secondItem="eUE-hP-c9P" secondAttribute="trailing" constant="35" id="knQ-xB-YOV"/>
-                            <constraint firstItem="ilI-A4-1Tg" firstAttribute="leading" secondItem="dru-dd-wEs" secondAttribute="trailing" constant="74" id="nbS-Nb-EQ4"/>
+                            <constraint firstItem="ilI-A4-1Tg" firstAttribute="leading" secondItem="dru-dd-wEs" secondAttribute="trailing" constant="29" id="nbS-Nb-EQ4"/>
                             <constraint firstItem="8pR-El-JNr" firstAttribute="top" secondItem="fqe-IK-ham" secondAttribute="bottom" constant="33" id="njX-S6-sNs"/>
                             <constraint firstItem="os1-BV-RL7" firstAttribute="leading" secondItem="Kst-Oq-Cih" secondAttribute="trailing" constant="136" id="okJ-lw-EIJ"/>
                             <constraint firstItem="8pR-El-JNr" firstAttribute="leading" secondItem="f1F-37-7JQ" secondAttribute="trailing" constant="49" id="pJX-Fs-O44"/>
                             <constraint firstItem="cX0-ef-F3s" firstAttribute="top" secondItem="os1-BV-RL7" secondAttribute="bottom" id="pMw-Cg-9nw"/>
-                            <constraint firstItem="eUE-hP-c9P" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="sNM-Ur-vA6"/>
-                            <constraint firstItem="eUE-hP-c9P" firstAttribute="top" secondItem="ORf-FY-exR" secondAttribute="bottom" constant="11" id="teI-IQ-xfx"/>
                             <constraint firstItem="os1-BV-RL7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="80" id="uZc-Tl-lwj"/>
                             <constraint firstItem="fqe-IK-ham" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="xdw-Ih-5RL"/>
                             <constraint firstItem="dru-dd-wEs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="yCY-zI-JLS"/>
-                            <constraint firstItem="X4z-vC-bNt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="184" id="zgX-IZ-GSh"/>
+                            <constraint firstItem="X4z-vC-bNt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="139" id="zgX-IZ-GSh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -407,6 +387,8 @@
                         <outlet property="populateHostname" destination="8pR-El-JNr" id="UWB-8y-9wt"/>
                         <outlet property="populateIPAddr" destination="hwg-BY-wYY" id="34E-Nm-fbT"/>
                         <outlet property="populateIPAddr2" destination="jFT-T8-cT8" id="L5B-c6-UOx"/>
+                        <outlet property="populateMACAddress" destination="ilI-A4-1Tg" id="aNz-YX-5vM"/>
+                        <outlet property="populateMACAddress2" destination="X4z-vC-bNt" id="Cc0-A3-RGV"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
