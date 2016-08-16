@@ -25,22 +25,24 @@ class ViewController: NSViewController {
         let currentHost = Host.current().localizedName ?? ""
         populateHostname.stringValue = currentHost
         
+        //get adapters - includes IP, Adapter Name, and MAC Address
+        let myInterfaces = getInterfaces()
         //ip address
-        let myIP = getIFAddresses()
-        if (myIP.count != 0) {
-            populateIPAddr.stringValue = myIP[0]
-            if (myIP.count != 1) {
-                populateIPAddr2.stringValue = myIP[1]
+        if (myInterfaces.count != 0) {
+            populateIPAddr.stringValue = myInterfaces[0].addr
+            if (myInterfaces.count != 1) {
+                if (myInterfaces[0].addr != myInterfaces[1].addr) {
+                    populateIPAddr2.stringValue = myInterfaces[1].addr
+                }
             }
         }
         
         //mac address
-        let finalMACAddress = getInterfaces()
-        if (finalMACAddress.count != 0) {
-            populateMACAddress.stringValue = finalMACAddress[0].mac
-            if (finalMACAddress.count != 2) {
-                if (finalMACAddress[0].mac != finalMACAddress[2].mac) {
-                populateMACAddress2.stringValue = finalMACAddress[2].mac
+        if (myInterfaces.count != 0) {
+            populateMACAddress.stringValue = myInterfaces[0].mac
+            if (myInterfaces.count != 1) {
+                if (myInterfaces[0].mac != myInterfaces[1].mac) {
+                    populateMACAddress2.stringValue = myInterfaces[1].mac
                 }
             }
         }
@@ -62,39 +64,7 @@ class ViewController: NSViewController {
 
 
 }
-//get IP Address of active adapters
-func getIFAddresses() -> [String] {
-    var addresses = [String]()
-    
-    // Get list of all interfaces on the local machine:
-    var ifaddr : UnsafeMutablePointer<ifaddrs>?
-    guard getifaddrs(&ifaddr) == 0 else { return [] }
-    guard let firstAddr = ifaddr else { return [] }
-    
-    // For each interface ...
-    for ptr in sequence(first: firstAddr, next: { $0.pointee.ifa_next }) {
-        let flags = Int32(ptr.pointee.ifa_flags)
-        var addr = ptr.pointee.ifa_addr.pointee
-        
-        // Check for running IPv4, IPv6 interfaces. Skip the loopback interface.
-        if (flags & (IFF_UP|IFF_RUNNING|IFF_LOOPBACK)) == (IFF_UP|IFF_RUNNING) {
-            if addr.sa_family == UInt8(AF_INET) || addr.sa_family == UInt8(AF_INET6) {
-                
-                // Convert interface address to a human readable string:
-                var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
-                if (getnameinfo(&addr, socklen_t(addr.sa_len), &hostname, socklen_t(hostname.count),
-                                nil, socklen_t(0), NI_NUMERICHOST) == 0) {
-                    let address = String(cString: hostname)
-                    addresses.append(address)
-                }
-            }
-        }
-    }
-    
-    freeifaddrs(ifaddr)
-    return addresses
-}
-
+// gets the adapter name, ip address, and mac address
 func getInterfaces() -> [(name : String, addr: String, mac : String)] {
     
     var addresses = [(name : String, addr: String, mac : String)]()
@@ -122,7 +92,7 @@ func getInterfaces() -> [(name : String, addr: String, mac : String)] {
                     if lladdr.count == 6 {
                         nameToMac[name] = lladdr.map { String(format:"%02hhx", $0)}.joined(separator: ":")
                     }
-                case AF_INET, AF_INET6:
+                case AF_INET:
                     // Convert interface address to a human readable string:
                     var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
                     if (getnameinfo(addr, socklen_t(addr.pointee.sa_len),
