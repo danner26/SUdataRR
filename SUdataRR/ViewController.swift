@@ -10,13 +10,21 @@ import Cocoa
 import Foundation
 
 class ViewController: NSViewController {
-
+    // Hostname outlet
     @IBOutlet weak var populateHostname: NSTextField!
+    // IP Address 1 outlet
     @IBOutlet weak var populateIPAddr: NSTextField!
+    @IBOutlet weak var IPAdap1: NSTextField!
+    // IP Address 2 outlet
     @IBOutlet weak var populateIPAddr2: NSTextField!
-    
+    @IBOutlet weak var IPAdap2: NSTextField!
+    // MAC Adress 1 outlet
     @IBOutlet weak var populateMACAddress: NSTextField!
+    @IBOutlet weak var MACAdap1: NSTextField!
+    // MAC Address 2 outlet
     @IBOutlet weak var populateMACAddress2: NSTextField!
+    @IBOutlet weak var MACAdap2: NSTextField!
+    // OS Version outlet
     @IBOutlet weak var osVersion: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +38,11 @@ class ViewController: NSViewController {
         //ip address
         if (myInterfaces.count != 0) {
             populateIPAddr.stringValue = myInterfaces[0].addr
+            IPAdap1.stringValue = myInterfaces[0].name
             if (myInterfaces.count != 1) {
                 if (myInterfaces[0].addr != myInterfaces[1].addr) {
                     populateIPAddr2.stringValue = myInterfaces[1].addr
+                    IPAdap2.stringValue = myInterfaces[1].name
                 }
             }
         }
@@ -40,9 +50,11 @@ class ViewController: NSViewController {
         //mac address
         if (myInterfaces.count != 0) {
             populateMACAddress.stringValue = myInterfaces[0].mac
+            MACAdap1.stringValue = myInterfaces[0].name
             if (myInterfaces.count != 1) {
                 if (myInterfaces[0].mac != myInterfaces[1].mac) {
                     populateMACAddress2.stringValue = myInterfaces[1].mac
+                    MACAdap2.stringValue = myInterfaces[1].name
                 }
             }
         }
