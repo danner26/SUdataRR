@@ -146,7 +146,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SUdataRR" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-105" y="-5"/>
+            <point key="canvasLocation" x="112" y="-8"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -166,7 +166,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-105" y="244"/>
+            <point key="canvasLocation" x="112" y="241"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -318,6 +318,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="EditLoginConfig:" target="XfG-lQ-9wD" id="7K9-bK-QOs"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jFT-T8-cT8">
                                 <rect key="frame" x="136" y="100" width="102" height="16"/>
@@ -375,6 +378,19 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IfL-hh-8Qq">
+                                <rect key="frame" x="561" y="222" width="33" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="refresh" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="l2p-eh-TtW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">r</string>
+                                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="refresh:" target="XfG-lQ-9wD" id="kNc-d7-6xJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="fX9-mQ-WxM" firstAttribute="top" secondItem="4QW-CV-lMh" secondAttribute="bottom" constant="1" id="3eJ-Gg-9ga"/>
@@ -437,7 +453,10 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-97" y="653.5"/>
+            <point key="canvasLocation" x="120" y="650.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="refresh" width="512" height="512"/>
+    </resources>
 </document>

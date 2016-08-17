@@ -8,6 +8,7 @@
 
 import Cocoa
 import Foundation
+import NetFS
 
 class ViewController: NSViewController {
     // Hostname outlet
@@ -26,6 +27,29 @@ class ViewController: NSViewController {
     @IBOutlet weak var MACAdap2: NSTextField!
     // OS Version outlet
     @IBOutlet weak var osVersion: NSTextField!
+    // Buttons
+    @IBAction func refresh(_ sender: AnyObject) {
+        viewDidLoad()
+    }
+    @IBAction func EditLoginConfig(_ sender: AnyObject) {
+        let username = NSUserName()
+        let task = Task()
+        task.launchPath = "/bin/mkdir"
+        let volPoint = String("/Volumes/" + username)
+        task.arguments = [volPoint]
+        task.launch()
+        let myTask = Task()
+        myTask.launchPath = "/sbin/mount"
+        let mountPoint = String("//fsfiles.stockton.edu/home/" + username)
+        myTask.arguments = ["-t", "smbfs", mountPoint, volPoint]
+        myTask.launch()
+        let editTask = Task();
+        editTask.launchPath = "/usr/bin/open"
+        let filePoint = String(volPoint + "/LoginConfig.xml")
+        editTask.arguments = ["-a", "/Applications/TextEdit.app", filePoint]
+        editTask.launch()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -44,6 +68,9 @@ class ViewController: NSViewController {
                     populateIPAddr2.stringValue = myInterfaces[1].addr
                     IPAdap2.stringValue = myInterfaces[1].name
                 }
+            } else {
+                populateIPAddr2.stringValue = ""
+                IPAdap2.stringValue = ""
             }
         }
         
@@ -56,6 +83,9 @@ class ViewController: NSViewController {
                     populateMACAddress2.stringValue = myInterfaces[1].mac
                     MACAdap2.stringValue = myInterfaces[1].name
                 }
+            } else {
+                populateMACAddress2.stringValue = ""
+                MACAdap2.stringValue = ""
             }
         }
         
@@ -76,6 +106,7 @@ class ViewController: NSViewController {
 
 
 }
+
 // gets the adapter name, ip address, and mac address
 func getInterfaces() -> [(name : String, addr: String, mac : String)] {
     

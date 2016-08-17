@@ -13,6 +13,7 @@
 		D36D34B91D5D076C0026A8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36D34B71D5D076C0026A8D7 /* Main.storyboard */; };
 		D36D34C41D5D076C0026A8D7 /* SUdataRRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D34C31D5D076C0026A8D7 /* SUdataRRTests.swift */; };
 		D36D34CF1D5D076C0026A8D7 /* SUdataRRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D34CE1D5D076C0026A8D7 /* SUdataRRUITests.swift */; };
+		D37FF7D41D637B9500E17BD2 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = D37FF7D31D637B9500E17BD2 /* refresh.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D36D34CE1D5D076C0026A8D7 /* SUdataRRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUdataRRUITests.swift; sourceTree = "<group>"; };
 		D36D34D01D5D076C0026A8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D370290B1D621D40002EEC63 /* SUdataRR-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUdataRR-Bridging-Header.h"; sourceTree = "<group>"; };
+		D37FF7D31D637B9500E17BD2 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = Assets/refresh.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		D36D34B01D5D076C0026A8D7 /* SUdataRR */ = {
 			isa = PBXGroup;
 			children = (
+				D37FF7D31D637B9500E17BD2 /* refresh.png */,
 				D370290B1D621D40002EEC63 /* SUdataRR-Bridging-Header.h */,
 				D326394F1D61124900ABE304 /* SUdataRR.entitlements */,
 				D36D34B11D5D076C0026A8D7 /* AppDelegate.swift */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D36D34B61D5D076C0026A8D7 /* Assets.xcassets in Resources */,
+				D37FF7D41D637B9500E17BD2 /* refresh.png in Resources */,
 				D36D34B91D5D076C0026A8D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
