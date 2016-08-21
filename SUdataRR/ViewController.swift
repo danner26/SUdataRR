@@ -28,8 +28,9 @@ class ViewController: NSViewController {
     // OS Version outlet
     @IBOutlet weak var osVersion: NSTextField!
     // Buttons
+    @IBOutlet weak var editLoginConfigButton: NSButton!
     @IBAction func refresh(_ sender: AnyObject) {
-        viewDidLoad()
+        //reloadData()
     }
     @IBAction func EditLoginConfig(_ sender: AnyObject) {
         let username = NSUserName()
@@ -53,12 +54,15 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        loadData()
+    }
+    func loadData() {
         //hostname
         let currentHost = Host.current().localizedName ?? ""
         populateHostname.stringValue = currentHost
         
         //get adapters - includes IP, Adapter Name, and MAC Address
-        let myInterfaces = getInterfaces()
+        var myInterfaces = getInterfaces()
         //ip address
         if (myInterfaces.count != 0) {
             populateIPAddr.stringValue = myInterfaces[0].addr
@@ -96,16 +100,25 @@ class ViewController: NSViewController {
         let osPatchVers = String(osVers.patchVersion)
         osVersion.stringValue = (osMajorVers + "." + osMinorVers + "." + osPatchVers)
         
+        // Edit Users Login Config enabled/disabled
+        if (NSUserName() == "Administrator" || NSUserName() == "administrator") {
+            // disable button
+            editLoginConfigButton.isEnabled = false
+        }
+
     }
 
     override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.
+            
         }
     }
+    
 
 
 }
+
 
 // gets the adapter name, ip address, and mac address
 func getInterfaces() -> [(name : String, addr: String, mac : String)] {

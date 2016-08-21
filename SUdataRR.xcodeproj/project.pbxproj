@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D36A07E51D65411F00ED7FBD /* OpenScriptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36A07E41D65411F00ED7FBD /* OpenScriptsViewController.swift */; };
 		D36D34B21D5D076C0026A8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D34B11D5D076C0026A8D7 /* AppDelegate.swift */; };
 		D36D34B41D5D076C0026A8D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D34B31D5D076C0026A8D7 /* ViewController.swift */; };
 		D36D34B61D5D076C0026A8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36D34B51D5D076C0026A8D7 /* Assets.xcassets */; };
 		D36D34B91D5D076C0026A8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36D34B71D5D076C0026A8D7 /* Main.storyboard */; };
 		D36D34C41D5D076C0026A8D7 /* SUdataRRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D34C31D5D076C0026A8D7 /* SUdataRRTests.swift */; };
 		D36D34CF1D5D076C0026A8D7 /* SUdataRRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D34CE1D5D076C0026A8D7 /* SUdataRRUITests.swift */; };
-		D37FF7D41D637B9500E17BD2 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = D37FF7D31D637B9500E17BD2 /* refresh.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		D326394F1D61124900ABE304 /* SUdataRR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SUdataRR.entitlements; sourceTree = "<group>"; };
+		D36A07E41D65411F00ED7FBD /* OpenScriptsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenScriptsViewController.swift; sourceTree = "<group>"; };
 		D36D34AE1D5D076C0026A8D7 /* SUdataRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUdataRR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36D34B11D5D076C0026A8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D36D34B31D5D076C0026A8D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		D36D34CE1D5D076C0026A8D7 /* SUdataRRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUdataRRUITests.swift; sourceTree = "<group>"; };
 		D36D34D01D5D076C0026A8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D370290B1D621D40002EEC63 /* SUdataRR-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUdataRR-Bridging-Header.h"; sourceTree = "<group>"; };
-		D37FF7D31D637B9500E17BD2 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = Assets/refresh.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,6 @@
 		D36D34B01D5D076C0026A8D7 /* SUdataRR */ = {
 			isa = PBXGroup;
 			children = (
-				D37FF7D31D637B9500E17BD2 /* refresh.png */,
 				D370290B1D621D40002EEC63 /* SUdataRR-Bridging-Header.h */,
 				D326394F1D61124900ABE304 /* SUdataRR.entitlements */,
 				D36D34B11D5D076C0026A8D7 /* AppDelegate.swift */,
@@ -107,6 +106,7 @@
 				D36D34B51D5D076C0026A8D7 /* Assets.xcassets */,
 				D36D34B71D5D076C0026A8D7 /* Main.storyboard */,
 				D36D34BA1D5D076C0026A8D7 /* Info.plist */,
+				D36A07E41D65411F00ED7FBD /* OpenScriptsViewController.swift */,
 			);
 			path = SUdataRR;
 			sourceTree = "<group>";
@@ -244,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D36D34B61D5D076C0026A8D7 /* Assets.xcassets in Resources */,
-				D37FF7D41D637B9500E17BD2 /* refresh.png in Resources */,
 				D36D34B91D5D076C0026A8D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +271,7 @@
 			files = (
 				D36D34B41D5D076C0026A8D7 /* ViewController.swift in Sources */,
 				D36D34B21D5D076C0026A8D7 /* AppDelegate.swift in Sources */,
+				D36A07E51D65411F00ED7FBD /* OpenScriptsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
