@@ -75,7 +75,7 @@ class OpenScriptsViewController: NSViewController {
         // unmount the volume before view disappears
         let umount = Task()
         umount.launchPath = "/sbin/umount"
-        let volPoint = String("/Volumes/Scripts")
+        let volPoint = String("/Volumes/compserv")
         umount.arguments = [volPoint]
         umount.launch()
     }
