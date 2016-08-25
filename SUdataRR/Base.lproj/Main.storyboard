@@ -761,6 +761,10 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="v6Z-gB-iSW" id="72z-tQ-BOJ"/>
+                                                <outlet property="delegate" destination="v6Z-gB-iSW" id="BhH-qV-feA"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>

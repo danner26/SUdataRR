@@ -16,6 +16,7 @@
 import Cocoa
 import Foundation
 import NetFS
+import AppKit
 
 class BackupDataViewController: NSViewController {
 
