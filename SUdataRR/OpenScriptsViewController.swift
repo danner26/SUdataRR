@@ -68,8 +68,6 @@ class OpenScriptsViewController: NSViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
-        
     }
     override func viewDidDisappear() {
         // unmount the volume before view disappears
@@ -80,21 +78,6 @@ class OpenScriptsViewController: NSViewController {
         umount.launch()
     }
     
-    //use for table method.. not in use atm, maybe later down the road
-    func loadScripts(atPath: String) -> [NSURL] {
-        var urls : [NSURL] = []
-        let dirUrl = NSURL(fileURLWithPath: atPath)
-        let fileManager = FileManager.default
-        let enumerator:FileManager.DirectoryEnumerator? = fileManager.enumerator(at: dirUrl as URL, includingPropertiesForKeys: nil)
-        while let url = enumerator?.nextObject() as! NSURL? {
-            if url.lastPathComponent == ".DS_Store" {
-                continue
-            }
-            urls.append(url)
-        }
-        return urls
-        
-    }
 }
 
 extension String {
