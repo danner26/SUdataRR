@@ -26,14 +26,14 @@ import AppKit
 public struct Metadata : CustomDebugStringConvertible , Equatable {
   
   let name:String
-  let date:Date
+  let date:NSDate
   let size:Int64
   let icon:NSImage
   let color:NSColor
   let isFolder:Bool
-  let url:URL
+  let url:NSURL
   
-  init(fileURL:URL, name:String, date:Date, size:Int64, icon:NSImage, isFolder:Bool, color:NSColor ) {
+  init(fileURL:NSURL, name:String, date:NSDate, size:Int64, icon:NSImage, isFolder:Bool, color:NSColor ) {
     self.name  = name
     self.date = date
     self.size = size
@@ -51,14 +51,14 @@ public struct Metadata : CustomDebugStringConvertible , Equatable {
 
 //MARK:  Metadata  Equatable
 public func ==(lhs: Metadata, rhs: Metadata) -> Bool {
-  return (lhs.url == rhs.url)
+  return lhs.url.isEqual(rhs.url)
 }
 
 
 public struct Directory  {
   
   private var files = [Metadata]()
-  let url:URL
+  let url:NSURL
   
   public enum FileOrder : String {
     case Name
@@ -66,20 +66,20 @@ public struct Directory  {
     case Size
   }
   
-  public init( folderURL:URL ) {
+  public init( folderURL:NSURL ) {
     url = folderURL
     let requiredAttributes = [URLResourceKey.localizedNameKey, URLResourceKey.effectiveIconKey,URLResourceKey.typeIdentifierKey,URLResourceKey.creationDateKey,URLResourceKey.fileSizeKey, URLResourceKey.isDirectoryKey,URLResourceKey.isPackageKey]
-    if let enumerator = FileManager.default.enumerator(at: folderURL, includingPropertiesForKeys: requiredAttributes, options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants], errorHandler: nil) {
+    if let enumerator = FileManager.default.enumerator(at: folderURL as URL, includingPropertiesForKeys: requiredAttributes, options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants], errorHandler: nil) {
       
-      while let url  = enumerator.nextObject() as? URL {
+      while let url  = enumerator.nextObject() as? NSURL {
         print( "\(url )")
         
         do{
           
-          let properties = try  (url as NSURL).resourceValues(forKeys: requiredAttributes)
+          let properties = try  url.resourceValues(forKeys: requiredAttributes)
           files.append(Metadata(fileURL: url,
             name: properties[URLResourceKey.localizedNameKey] as? String ?? "",
-            date: properties[URLResourceKey.creationDateKey] as? Date ?? Date.distantPast,
+            date: properties[URLResourceKey.creationDateKey] as? NSDate ?? NSDate.distantPast,
             size: (properties[URLResourceKey.fileSizeKey] as? NSNumber)?.int64Value ?? 0,
             icon: properties[URLResourceKey.effectiveIconKey] as? NSImage  ?? NSImage(),
             isFolder: (properties[URLResourceKey.isDirectoryKey] as? NSNumber)?.boolValue ?? false,
@@ -93,16 +93,16 @@ public struct Directory  {
   }
   
   
-  func contentsOrderedBy(_ orderedBy:FileOrder, ascending:Bool) -> [Metadata] {
+  mutating func contentsOrderedBy(orderedBy:FileOrder, ascending:Bool) -> [Metadata] {
     let sortedFiles:[Metadata]
     switch orderedBy
     {
     case .Name:
-      sortedFiles = files.sorted{ return sortMetadata(lhsIsFolder:true, rhsIsFolder: true, ascending: ascending, attributeComparation:itemComparator(lhs:$0.name, rhs: $1.name, ascending:ascending)) }
+      sortedFiles = files.sort{ return sortMetadata(lhsIsFolder:true, rhsIsFolder: true, ascending: ascending, attributeComparation:itemComparator(lhs:$0.name, rhs: $1.name, ascending:ascending)) }
     case .Size:
-      sortedFiles = files.sorted{ return sortMetadata(lhsIsFolder:true, rhsIsFolder: true, ascending:ascending, attributeComparation:itemComparator(lhs:$0.size, rhs: $1.size, ascending: ascending)) }
+      sortedFiles = files.sort{ return sortMetadata(lhsIsFolder:true, rhsIsFolder: true, ascending:ascending, attributeComparation:itemComparator(lhs:$0.size, rhs: $1.size, ascending: ascending)) }
     case .Date:
-      sortedFiles = files.sorted{ return sortMetadata(lhsIsFolder:true, rhsIsFolder: true, ascending:ascending, attributeComparation:itemComparator(lhs:$0.date, rhs: $1.date, ascending:ascending)) }
+      sortedFiles = files.sort{ return sortMetadata(lhsIsFolder:true, rhsIsFolder: true, ascending:ascending, attributeComparation:itemComparator(lhs:$0.date, rhs: $1.date, ascending:ascending)) }
     }
     return sortedFiles
   }
@@ -127,17 +127,19 @@ func itemComparator<T:Comparable>( lhs:T, rhs:T, ascending:Bool ) -> Bool {
 
 
 //MARK: NSDate Comparable Extension
+extension NSDate: Comparable {
+  
+}
 
-
-public func ==(lhs: Date, rhs: Date) -> Bool {
-  if lhs.compare(rhs) == .orderedSame {
+public func ==(lhs: NSDate, rhs: NSDate) -> Bool {
+  if lhs.compare(rhs as Date) == .orderedSame {
     return true
   }
   return false
 }
 
-public func <(lhs: Date, rhs: Date) -> Bool {
-  if lhs.compare(rhs) == .orderedAscending {
+public func <(lhs: NSDate, rhs: NSDate) -> Bool {
+  if lhs.compare(rhs as Date) == .orderedAscending {
     return true
   }
   return false
