@@ -19,7 +19,6 @@ import NetFS
 import AppKit
 
 class BackupDataViewController: NSViewController {
-    
     @IBOutlet weak var tableView: NSTableView!
     // var dataArray = loadScripts(atPath: "/Users")
     let sizeFormatter = ByteCountFormatter()
@@ -27,26 +26,45 @@ class BackupDataViewController: NSViewController {
     var directoryItems:[Metadata]?
     var sortOrder = Directory.FileOrder.Name
     var sortAscending = true
+    var url = NSURL(fileURLWithPath: "/")
+    
+    @IBOutlet weak var test: NSTextField!
+    @IBAction func backButton(_ sender: AnyObject) {
+        self.dismissViewController(self)
+    }
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        // print(dataArray)
-        // statusLabel.stringValue = ""
-        let url = NSURL(fileURLWithPath: "/")
-        // print(url)
-        directory = Directory(folderURL: url)
-        // print(directory)
-        self.representedObject = "/"
-        reloadFileList()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = (self)
-        tableView.dataSource = (self)
-    
         
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.delegate = (self)
+        tableView.dataSource = (self)
+        //self.representedObject = String(url)
+        //directory = Directory(folderURL: url)
+        
+        //reloadFileList()
+        print(shell(launchPath: "/bin/ls", arguments: ["/"])) //tring to use shell stuff
+        
+    }
+    func shell(launchPath: String, arguments: [String] = []) -> (String?) { // , Int32) {
+        
+        let task = Task()
+        task.launchPath = launchPath
+        task.arguments = arguments
+        
+        let pipe = Pipe()
+        task.standardOutput = pipe
+        task.standardError = pipe
+        task.launch()
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let output = String(data: data, encoding: String.Encoding.utf8)
+        task.waitUntilExit()
+        return (output) //, task.terminationStatus)
+    }
+    
     override var representedObject: AnyObject? {
         didSet {
             if let url = representedObject as? NSURL {
@@ -109,6 +127,8 @@ func loadScripts(atPath: String) -> [NSURL] {
     let enumerator:FileManager.DirectoryEnumerator? = fileManager.enumerator(at: dirUrl as URL, includingPropertiesForKeys: nil)
     while let url = enumerator?.nextObject() as! NSURL? {
         if url.lastPathComponent == ".DS_Store" {
+            continue
+        } else if url.lastPathComponent == ".localized" {
             continue
         }
         urls.append(url)

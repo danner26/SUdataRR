@@ -14,6 +14,10 @@ class OpenScriptsViewController: NSViewController {
     @IBOutlet weak var hdtscriptsOutlet: NSTextField!
     
     @IBOutlet weak var testme: NSTextField!
+    
+    @IBAction func backButton(_ sender: AnyObject) {
+        self.dismissViewController(self)
+    }
     @IBAction func HDTScripts(_ sender: AnyObject) {
         // trying to on click set link
         pathControl.url = NSURL.fileURL(withPath: "/Volumes/compserv/MacOSX_Configs/HDT/Scripts")

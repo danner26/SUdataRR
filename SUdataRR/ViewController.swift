@@ -29,8 +29,21 @@ class ViewController: NSViewController {
     @IBOutlet weak var osVersion: NSTextField!
     // Buttons
     @IBOutlet weak var editLoginConfigButton: NSButton!
-    @IBAction func refresh(_ sender: AnyObject) {
-        //reloadData()
+    // Buttons :: On Click actions
+    @IBAction func otherScriptsButton(_ sender: AnyObject) {
+        let sheetViewController: NSViewController = {
+            return self.storyboard!.instantiateController(withIdentifier: "otherScriptsView")
+                as! NSViewController
+        }()
+        self.presentViewControllerAsSheet(sheetViewController)
+    }
+    
+    @IBAction func backupDataButton(_ sender: AnyObject) {
+        let sheetViewController: NSViewController = {
+            return self.storyboard!.instantiateController(withIdentifier: "backupDataView")
+                as! NSViewController
+        }()
+        self.presentViewControllerAsSheet(sheetViewController)
     }
     @IBAction func EditLoginConfig(_ sender: AnyObject) {
         let username = NSUserName()
@@ -49,6 +62,9 @@ class ViewController: NSViewController {
         let filePoint = String(volPoint + "/LoginConfig.xml")
         editTask.arguments = ["-a", "/Applications/TextEdit.app", filePoint]
         editTask.launch()
+    }
+    @IBAction func refresh(_ sender: AnyObject) {
+        //reloadData()
     }
     
     override func viewDidLoad() {

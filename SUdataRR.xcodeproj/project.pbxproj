@@ -14,6 +14,7 @@
 		D36D34B91D5D076C0026A8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36D34B71D5D076C0026A8D7 /* Main.storyboard */; };
 		D36D34C41D5D076C0026A8D7 /* SUdataRRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D34C31D5D076C0026A8D7 /* SUdataRRTests.swift */; };
 		D36D34CF1D5D076C0026A8D7 /* SUdataRRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D34CE1D5D076C0026A8D7 /* SUdataRRUITests.swift */; };
+		D385EB281D81947E00668107 /* RestoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D385EB271D81947E00668107 /* RestoreDataViewController.swift */; };
 		D3964F221D74B056000C7E82 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3964F211D74B056000C7E82 /* WindowController.swift */; };
 		D3AE1D481D6E5F180071FE1B /* BackupDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AE1D471D6E5F180071FE1B /* BackupDataViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		D36D34CE1D5D076C0026A8D7 /* SUdataRRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUdataRRUITests.swift; sourceTree = "<group>"; };
 		D36D34D01D5D076C0026A8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D370290B1D621D40002EEC63 /* SUdataRR-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUdataRR-Bridging-Header.h"; sourceTree = "<group>"; };
+		D385EB271D81947E00668107 /* RestoreDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoreDataViewController.swift; sourceTree = "<group>"; };
 		D3964F211D74B056000C7E82 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		D3AE1D471D6E5F180071FE1B /* BackupDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackupDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 				D36A07E41D65411F00ED7FBD /* OpenScriptsViewController.swift */,
 				D3AE1D471D6E5F180071FE1B /* BackupDataViewController.swift */,
 				D3964F211D74B056000C7E82 /* WindowController.swift */,
+				D385EB271D81947E00668107 /* RestoreDataViewController.swift */,
 			);
 			path = SUdataRR;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3AE1D481D6E5F180071FE1B /* BackupDataViewController.swift in Sources */,
+				D385EB281D81947E00668107 /* RestoreDataViewController.swift in Sources */,
 				D3964F221D74B056000C7E82 /* WindowController.swift in Sources */,
 				D36D34B41D5D076C0026A8D7 /* ViewController.swift in Sources */,
 				D36D34B21D5D076C0026A8D7 /* AppDelegate.swift in Sources */,
